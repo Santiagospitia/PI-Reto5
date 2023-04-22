@@ -25,8 +25,7 @@ export default function Pared1(){
       };
 
       const handleUnmuted= () => {
-        video.muted = false;
-        video.play();
+        video.muted = !video.muted;
         console.log("Desmutear")
       };
     
@@ -36,7 +35,7 @@ export default function Pared1(){
                 <planeGeometry/>
                 <meshStandardMaterial  side = {DoubleSide} color='red'/>
             </mesh>
-            <mesh  scale={0.8} onClick={handleClick} onDoubleClick={handleUnmuted}>
+            <mesh  scale={0.8} onContextMenu={handleClick} onDoubleClick={handleUnmuted}>
                 <planeBufferGeometry args={[1, 1]} />
                 <meshBasicMaterial map={videoTexture.current}  />
              </mesh>    
